@@ -1,0 +1,816 @@
+{
+	"info": {
+		"_postman_id": "5376bd79-d403-4b7c-9c89-00217ec065db",
+		"name": "courses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27960270"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"soulaf\",\r\n  \"email\": \"soulaf.doe@example.com\",\r\n  \"password\": \"soulaf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"soulaf\",\r\n  \"email\": \"soulaf.doe@example.com\",\r\n  \"password\": \"soulaf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 14:35:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"soulaf.doe@example.com\",\r\n  \"password\": \"soulaf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"soulaf.doe@example.com\",\r\n  \"password\": \"soulaf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc-DQQOKtA2L2bxHrkpRGDk/Fmy+y8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 14:41:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MDgwNzMsImV4cCI6MTcyOTYxMTY3M30.OkTLpbxg9wv-7LOVUFPyoIHgi4RNB2Y67xaKNBNVSzc\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "addCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MTM4MzcsImV4cCI6MTcyOTYxNzQzN30.INAt-r69jeqNgcYdVPLcUktWXFEDMd-twRs5l7BVw-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MTM4MzcsImV4cCI6MTcyOTYxNzQzN30.INAt-r69jeqNgcYdVPLcUktWXFEDMd-twRs5l7BVw-c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Course5 Title\",\r\n  \"description\": \"Course Description\",\r\n  \"duration\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/courses/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"courses",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addCourse",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MTM4MzcsImV4cCI6MTcyOTYxNzQzN30.INAt-r69jeqNgcYdVPLcUktWXFEDMd-twRs5l7BVw-c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Course5 Title\",\r\n  \"description\": \"Course Description\",\r\n  \"duration\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/courses/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"courses",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "154"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9a-Ut73phgXz66fhmoHw12rZOibf7Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 16:20:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Course5 Title\",\n    \"description\": \"Course Description\",\n    \"duration\": 60,\n    \"createdBy\": \"6717b844873011457ac6548f\",\n    \"_id\": \"6717d0c39d6a782d62b5d11b\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "viewCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MTM4MzcsImV4cCI6MTcyOTYxNzQzN30.INAt-r69jeqNgcYdVPLcUktWXFEDMd-twRs5l7BVw-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "viewCourse",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"courses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1081"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"439-Idw5hUz4BfIIB8FEuFPeMOViO/k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 16:23:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6717d06b9d6a782d62b5d10f\",\n        \"title\": \"Course Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d09e9d6a782d62b5d111\",\n        \"title\": \"Course Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d0b39d6a782d62b5d113\",\n        \"title\": \"Course Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d0b59d6a782d62b5d115\",\n        \"title\": \"Course Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d0b79d6a782d62b5d117\",\n        \"title\": \"Course Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d0be9d6a782d62b5d119\",\n        \"title\": \"Course4 Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d0c39d6a782d62b5d11b\",\n        \"title\": \"Course5 Title\",\n        \"description\": \"Course Description\",\n        \"duration\": 60,\n        \"createdBy\": \"6717b844873011457ac6548f\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "updateCourse",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deletCourse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3ZDU2M2RlYTNiYzZiZGRkMjMxNmYiLCJpYXQiOjE3Mjk2MjAxOTIsImV4cCI6MTcyOTYyMzc5Mn0.L46tqOtVilCnFSJy-DXHgdvDPG0uQEa9P6L1CvJiPyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/courses/6717ef510e54ac2b44664216",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"courses",
+								"6717ef510e54ac2b44664216"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deletCourse",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/courses/6717ef510e54ac2b44664216",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"courses",
+										"6717ef510e54ac2b44664216"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58-6ZwyFGqzqt9FtevmOvQQnjq007o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 18:30:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Course and its related videos and comments have been successfully deleted.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "addVideo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3Yjg0NDg3MzAxMTQ1N2FjNjU0OGYiLCJpYXQiOjE3Mjk2MTM4MzcsImV4cCI6MTcyOTYxNzQzN30.INAt-r69jeqNgcYdVPLcUktWXFEDMd-twRs5l7BVw-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Introduction to MongoDB\",\r\n  \"description\": \"This video covers the basics of MongoDB.\",\r\n  \"courseId\": \"6717d06b9d6a782d62b5d10f\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/videos/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"videos",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addVideo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Introduction to MongoDB\",\r\n  \"description\": \"This video covers the basics of MongoDB.\",\r\n  \"courseId\": \"6717d06b9d6a782d62b5d10f\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/videos/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"videos",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-Q0eZ92BEcagxZ4d8tCnmpx/aq/o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 16:31:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Introduction to MongoDB\",\n    \"description\": \"This video covers the basics of MongoDB.\",\n    \"course\": \"6717d06b9d6a782d62b5d10f\",\n    \"_id\": \"6717d34e9d6a782d62b5d11e\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "addComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3ZDU2M2RlYTNiYzZiZGRkMjMxNmYiLCJpYXQiOjE3Mjk2MTUyMjMsImV4cCI6MTcyOTYxODgyM30.HF1MheSeRWofN3rfgGITq5tJPaufvSFn27-k2jWNaWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \" video!\",\r\n  \"videoId\": \"6717d34e9d6a782d62b5d11e\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/comments/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"comments",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addComment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"content\": \" video!\",\r\n  \"videoId\": \"6717d34e9d6a782d62b5d11e\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/comments/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"comments",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"af-C2XlogGSYs13s1vIJDdMZ2bf9aE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 16:40:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": \" video!\",\n    \"video\": \"6717d34e9d6a782d62b5d11e\",\n    \"createdBy\": \"6717d563dea3bc6bddd2316f\",\n    \"_id\": \"6717d58fdea3bc6bddd23175\",\n    \"createdAt\": \"2024-10-22T16:40:47.689Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "viewComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE3ZDU2M2RlYTNiYzZiZGRkMjMxNmYiLCJpYXQiOjE3Mjk2MTUyMjMsImV4cCI6MTcyOTYxODgyM30.HF1MheSeRWofN3rfgGITq5tJPaufvSFn27-k2jWNaWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/comments/6717d34e9d6a782d62b5d11e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"comments",
+								"6717d34e9d6a782d62b5d11e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "viewComment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/comments/6717d34e9d6a782d62b5d11e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"comments",
+										"6717d34e9d6a782d62b5d11e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "426"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1aa-Us3IwfODAImNEoEqHIxSemL67uo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 16:43:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6717d542dea3bc6bddd2316d\",\n        \"content\": \"This is a great video!\",\n        \"video\": \"6717d34e9d6a782d62b5d11e\",\n        \"createdBy\": {\n            \"_id\": \"6717d3909d6a782d62b5d120\",\n            \"username\": \"soulaf1\"\n        },\n        \"createdAt\": \"2024-10-22T16:39:30.041Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6717d58fdea3bc6bddd23175\",\n        \"content\": \" video!\",\n        \"video\": \"6717d34e9d6a782d62b5d11e\",\n        \"createdBy\": {\n            \"_id\": \"6717d563dea3bc6bddd2316f\",\n            \"username\": \"soulaf3\"\n        },\n        \"createdAt\": \"2024-10-22T16:40:47.689Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
